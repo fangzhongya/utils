@@ -26,6 +26,10 @@
     ]
   },
   "include": [
+    "node.index.ts",
     "packages/**/*.ts",
-  ]
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
