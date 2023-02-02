@@ -1,13 +1,13 @@
 {
     "name": "@fangzhongya/utils",
     "private": false,
-    "version": "0.0.5",
+    "version": "0.0.1",
     "type": "module",
-    "description ": "个人工具类包",
+    "description ": "个人工具库",
     "author": "fangzhongya ",
     "license": "MIT",
     "keywords": [
-        "个人工具类包"
+        "个人工具库"
     ],
     "main": "./dist/index.cjs.js",
     "module": "./dist/index.js",
