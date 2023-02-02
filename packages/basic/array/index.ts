@@ -1,1 +1,2 @@
-export * from './index2';
+export * from './isArray';
+export * from './toggleArray';

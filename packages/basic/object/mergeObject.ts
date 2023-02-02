@@ -7,7 +7,7 @@
  * @param i 是否合并数组
  * @returns 合并的对象
  */
-export function objectMerge<T>(a: T, b: T, j: number = 1, i?: boolean): T {
+export function mergeObject<T>(a: T, b: T, j: number = 1, i?: boolean): T {
     for (const key in b) {
         const v = a[key];
         const t = b[key];
@@ -28,7 +28,7 @@ export function objectMerge<T>(a: T, b: T, j: number = 1, i?: boolean): T {
                 if (cv == ct) {
                     const n = j - 1;
                     if (n > 0) {
-                        a[key] = objectMerge(v, t, n, i);
+                        a[key] = mergeObject(v, t, n, i);
                     } else {
                         a[key] = t;
                     }

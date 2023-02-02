@@ -1,1 +1,2 @@
-export * from './index2';
+export * from './isObject';
+export * from './mergeObject';
