@@ -14,17 +14,42 @@
     "exports": {
         ".": {
             "import": "./dist/index.js",
-            "require": "./dist/index.cjs.js"
+            "require": "./dist/index.cjs.js",
+            "types": "./dist/index.d.ts"
+        },
+        "./*": "./*",
+        "./basic": {
+            "require": "./dist/basic/index.cjs.js",
+            "import": "./dist/basic/index.js",
+            "types": "./dist/basic/index.d.ts"
+        },
+        "./basic/array": {
+            "require": "./dist/basic/array/index.cjs.js",
+            "import": "./dist/basic/array/index.js",
+            "types": "./dist/basic/array/index.d.ts"
+        },
+        "./basic/string": {
+            "require": "./dist/basic/string/index.cjs.js",
+            "import": "./dist/basic/string/index.js",
+            "types": "./dist/basic/string/index.d.ts"
+        },
+        "./basic/object": {
+            "require": "./dist/basic/object/index.cjs.js",
+            "import": "./dist/basic/object/index.js",
+            "types": "./dist/basic/object/index.d.ts"
         }
     },
     "files": [
-        "dist"
+        "dist",
+        "types",
+        "*.d.ts"
     ],
-    "types": "index.d.ts",
+    "types": "./dist/index.d.ts",
     "typesVersions": {
         "*": {
             "*": [
-                "./dist/*"
+                "./dist/*",
+                "./*"
             ]
         }
     },

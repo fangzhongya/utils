@@ -5,19 +5,168 @@ import {
     writeFile,
     write,
     mkdir,
+    readFile,
     // access,
     // constants,
 } from 'node:fs';
 import { resolve, join } from 'node:path';
 
+
 const config = {
     dir: './packages/',
     gene: 'index.ts',
+    package: "./package.json",
+    main: "cjs.js",
+    module: "js",
+    types: "d.ts",
+    files: "dist"
 };
 
 interface FsReaddir {
     file: Array<string>;
     dirs: Array<string>;
+}
+
+let packageObj: {
+    [key: string]: any
+} = {
+
+};
+
+
+const exportsObj: {
+    [key: string]: {
+        [key: string]: string,
+    } | string,
+} = {
+    "./*": "./*",// 没有理解
+    ".": {
+        "require": `./${config.files}/index.${config.main}`,
+        "import": `./${config.files}/index.${config.module}`,
+        "types": `./${config.files}/index.${config.types}`,
+    },
+}
+
+const dirUrl = resolve(process.cwd(), config.dir);
+
+function setExportsObj(url: string) {
+    const ust = url
+        .replace(dirUrl, '')
+        .replace(/\\/g, '/');
+    exportsObj['.' + ust] = {
+        "require": `./${config.files + ust}/index.${config.main}`,
+        "import": `./${config.files + ust}/index.${config.module}`,
+        "types": `./${config.files + ust}/index.${config.types}`,
+    }
+}
+
+const packageUrl = resolve(process.cwd(), config.package);
+
+function getPackage() {
+    fsReadFile(packageUrl, (st) => {
+        if (st) {
+            packageObj = JSON.parse(st);
+        }
+    });
+}
+
+function setPackage() {
+    const typesVs = [
+        `./${config.files}/*`,
+        "./*"
+    ];
+
+    const filess = [
+        config.files,
+        "types",
+        "*.d.ts"
+    ];
+
+    packageObj.main = `./${config.files}/index.${config.main}`;
+    packageObj.module = `./${config.files}/index.${config.module}`;
+    packageObj.types = `./${config.files}/index.${config.types}`;
+    let typesVersions = packageObj.typesVersions;
+    if (typesVersions) {
+        if (typesVersions['*']) {
+            let arr = typesVersions['*']['*'];
+            if (arr) {
+                if (arr instanceof Array) {
+                    typesVs.forEach(key => {
+                        if (!arr.includes(key)) {
+                            arr.push(key)
+                        }
+                    })
+                }
+            } else {
+                arr = typesVs;
+            }
+            typesVersions['*']['*'] = arr;
+        } else {
+            typesVersions['*'] = {
+                "*": typesVs
+            }
+        }
+    } else {
+        typesVersions = {
+            "*": {
+                "*": typesVs
+            }
+        };
+    }
+    packageObj.typesVersions = typesVersions;
+
+    let files = packageObj.files;
+    if (files) {
+        if (files instanceof Array) {
+            filess.forEach(key => {
+                if (!files.includes(key)) {
+                    files.push(key)
+                }
+            })
+        }
+    } else {
+        files = filess
+    }
+    packageObj.files = files;
+
+    let exports = packageObj.exports;
+
+    if (exports) {
+        Object.keys(exportsObj).forEach((key) => {
+            let eobj = exports[key];
+            const obj = exportsObj[key];
+            if (eobj) {
+                if (typeof eobj == 'object' && typeof obj == 'object') {
+                    Object.keys(obj).forEach(k => {
+                        exports[key][k] = obj[k];
+                    })
+                } else {
+                    exports[key] = obj;
+                }
+            } else {
+                exports[key] = exportsObj[key]
+            }
+        });
+    } else {
+        exports = exportsObj;
+    }
+    packageObj.exports = exports;
+
+    fsOpen(packageUrl, JSON.stringify(packageObj, null, 4));
+}
+/**
+ * 读取文件内容
+ */
+function fsReadFile(url: string, callback: (s: string) => void) {
+    readFile(url, 'utf-8', function (err, dataStr) {
+        if (err) {
+            console.log(err);
+        }
+        //打印成功的结果
+        if (callback) {
+            callback(dataStr);
+        }
+    });
 }
 
 function fsReaddir(filePath: string): Promise<FsReaddir> {
@@ -162,7 +311,7 @@ interface issObj {
 let iss: Array<issObj> = [];
 
 async function init() {
-    const dirUrl = resolve(process.cwd(), config.dir);
+    getPackage();
     iss = [];
     await writes(dirUrl);
     if (iss.length > 0) {
@@ -184,8 +333,10 @@ async function init() {
                 join(issurl, config.gene),
                 arr.join('\n'),
             );
+            setExportsObj(issurl);
         });
     }
+    setPackage();
 }
 
 function writes(url: string): Promise<boolean> {
@@ -231,10 +382,13 @@ function writeIndex(
                 }
             });
         }
-        fsOpen(join(url, config.gene), arr.join('\n'));
-        if (dirs) {
-            for (let i = 0; i < dirs.length; i++) {
-                await writes(join(url, dirs[i]));
+        if (arr.length > 0) {
+            fsOpen(join(url, config.gene), arr.join('\n'));
+            setExportsObj(url);
+            if (dirs) {
+                for (let i = 0; i < dirs.length; i++) {
+                    await writes(join(url, dirs[i]));
+                }
             }
         }
         resolve(true);
