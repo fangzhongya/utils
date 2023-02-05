@@ -1,5 +1,5 @@
 interface Objunkn {
-    [key: string]: any,
+    [key: string]: any;
 }
 
 /**
@@ -7,7 +7,11 @@ interface Objunkn {
  * @param {*} objs
  * @param {*} id
  */
-export function toggleArray(objs: Array<Objunkn>, arr: Objunkn, id: string): Array<Objunkn> {
+export function toggleArray(
+    objs: Array<Objunkn>,
+    arr: Objunkn,
+    id: string,
+): Array<Objunkn> {
     let varr = [];
     let is = true;
     for (let index = 0; index < objs.length; index++) {
@@ -22,4 +26,13 @@ export function toggleArray(objs: Array<Objunkn>, arr: Objunkn, id: string): Arr
         varr.push(arr);
     }
     return varr;
+}
+
+/**
+ * 首字母小写
+ * @param {string} vs
+ * @returns string
+ */
+export function firstLower(vs: string): string {
+    return vs.slice(0, 1).toLowerCase() + vs.slice(1);
 }

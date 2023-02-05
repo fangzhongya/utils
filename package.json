@@ -1,58 +1,14 @@
 {
     "name": "@fangzhongya/utils",
     "private": false,
-    "version": "0.0.1",
     "type": "module",
+    "version": "0.0.6",
     "description ": "个人工具库",
     "author": "fangzhongya ",
     "license": "MIT",
     "keywords": [
         "个人工具库"
     ],
-    "main": "./dist/index.cjs.js",
-    "module": "./dist/index.js",
-    "exports": {
-        ".": {
-            "import": "./dist/index.js",
-            "require": "./dist/index.cjs.js",
-            "types": "./dist/index.d.ts"
-        },
-        "./*": "./*",
-        "./basic": {
-            "require": "./dist/basic/index.cjs.js",
-            "import": "./dist/basic/index.js",
-            "types": "./dist/basic/index.d.ts"
-        },
-        "./basic/array": {
-            "require": "./dist/basic/array/index.cjs.js",
-            "import": "./dist/basic/array/index.js",
-            "types": "./dist/basic/array/index.d.ts"
-        },
-        "./basic/string": {
-            "require": "./dist/basic/string/index.cjs.js",
-            "import": "./dist/basic/string/index.js",
-            "types": "./dist/basic/string/index.d.ts"
-        },
-        "./basic/object": {
-            "require": "./dist/basic/object/index.cjs.js",
-            "import": "./dist/basic/object/index.js",
-            "types": "./dist/basic/object/index.d.ts"
-        }
-    },
-    "files": [
-        "dist",
-        "types",
-        "*.d.ts"
-    ],
-    "types": "./dist/index.d.ts",
-    "typesVersions": {
-        "*": {
-            "*": [
-                "./dist/*",
-                "./*"
-            ]
-        }
-    },
     "repository": {
         "type": "git",
         "url": " https://github.com/fangzhongya/utils.git"
@@ -67,9 +23,95 @@
         "test": "vitest test"
     },
     "devDependencies": {
-        "@types/node": "^18.11.18",
+        "@fangzhongya/create": "0.1.5-3",
+        "@types/node": "^18.11.19",
         "tsup": "^6.5.0",
         "typescript": "^4.9.5",
-        "vitest": "^0.28.3"
-    }
+        "vitest": "^0.28.4"
+    },
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./dist/*"
+            ]
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        "./basic/array": {
+            "require": "./dist/basic/array/index.cjs",
+            "import": "./dist/basic/array/index.js",
+            "types": "./dist/basic/array/index.d.ts"
+        },
+        "./basic/array/isArray": {
+            "require": "./dist/basic/array/isArray.cjs",
+            "import": "./dist/basic/array/isArray.js",
+            "types": "./dist/basic/array/isArray.d.ts"
+        },
+        "./basic/array/toggleArray": {
+            "require": "./dist/basic/array/toggleArray.cjs",
+            "import": "./dist/basic/array/toggleArray.js",
+            "types": "./dist/basic/array/toggleArray.d.ts"
+        },
+        "./basic/object": {
+            "require": "./dist/basic/object/index.cjs",
+            "import": "./dist/basic/object/index.js",
+            "types": "./dist/basic/object/index.d.ts"
+        },
+        "./basic/object/isObject": {
+            "require": "./dist/basic/object/isObject.cjs",
+            "import": "./dist/basic/object/isObject.js",
+            "types": "./dist/basic/object/isObject.d.ts"
+        },
+        "./basic/object/mergeObject": {
+            "require": "./dist/basic/object/mergeObject.cjs",
+            "import": "./dist/basic/object/mergeObject.js",
+            "types": "./dist/basic/object/mergeObject.d.ts"
+        },
+        "./basic/object/unmergeObject": {
+            "require": "./dist/basic/object/unmergeObject.cjs",
+            "import": "./dist/basic/object/unmergeObject.js",
+            "types": "./dist/basic/object/unmergeObject.d.ts"
+        },
+        "./basic/string": {
+            "require": "./dist/basic/string/index.cjs",
+            "import": "./dist/basic/string/index.js",
+            "types": "./dist/basic/string/index.d.ts"
+        },
+        "./basic/string/index2": {
+            "require": "./dist/basic/string/index2.cjs",
+            "import": "./dist/basic/string/index2.js",
+            "types": "./dist/basic/string/index2.d.ts"
+        },
+        "./basic": {
+            "require": "./dist/basic/index.cjs",
+            "import": "./dist/basic/index.js",
+            "types": "./dist/basic/index.d.ts"
+        },
+        "./log": {
+            "require": "./dist/log/index.cjs",
+            "import": "./dist/log/index.js",
+            "types": "./dist/log/index.d.ts"
+        },
+        "./log/styleLog": {
+            "require": "./dist/log/styleLog.cjs",
+            "import": "./dist/log/styleLog.js",
+            "types": "./dist/log/styleLog.d.ts"
+        },
+        "./iss": {
+            "require": "./dist/iss/index.cjs",
+            "import": "./dist/iss/index.js",
+            "types": "./dist/iss/index.d.ts"
+        },
+        ".": {
+            "require": "./dist/index.cjs",
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
 }
