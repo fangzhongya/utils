@@ -8,6 +8,7 @@ test('log', () => {
             bag: 2,
         }) +
             styleLog(' 方忠亚 ', {
+                text: 7,
                 italic: true,
             }),
     );

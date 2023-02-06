@@ -2,7 +2,7 @@
     "name": "@fangzhongya/utils",
     "private": false,
     "type": "module",
-    "version": "0.0.6",
+    "version": "0.0.6-1",
     "description ": "个人工具库",
     "author": "fangzhongya ",
     "license": "MIT",
@@ -23,7 +23,7 @@
         "test": "vitest test"
     },
     "devDependencies": {
-        "@fangzhongya/create": "0.1.5-3",
+        "@fangzhongya/create": "0.1.9",
         "@types/node": "^18.11.19",
         "tsup": "^6.5.0",
         "typescript": "^4.9.5",
@@ -80,11 +80,6 @@
             "import": "./dist/basic/string/index.js",
             "types": "./dist/basic/string/index.d.ts"
         },
-        "./basic/string/index2": {
-            "require": "./dist/basic/string/index2.cjs",
-            "import": "./dist/basic/string/index2.js",
-            "types": "./dist/basic/string/index2.d.ts"
-        },
         "./basic": {
             "require": "./dist/basic/index.cjs",
             "import": "./dist/basic/index.js",
@@ -109,6 +104,46 @@
             "require": "./dist/index.cjs",
             "import": "./dist/index.js",
             "types": "./dist/index.d.ts"
+        },
+        "./basic/string/firstLower": {
+            "require": "./dist/basic/string/firstLower.cjs",
+            "import": "./dist/basic/string/firstLower.js",
+            "types": "./dist/basic/string/firstLower.d.ts"
+        },
+        "./basic/string/firstUpper": {
+            "require": "./dist/basic/string/firstUpper.cjs",
+            "import": "./dist/basic/string/firstUpper.js",
+            "types": "./dist/basic/string/firstUpper.d.ts"
+        },
+        "./name/getComponentNames": {
+            "require": "./dist/name/getComponentNames.cjs",
+            "import": "./dist/name/getComponentNames.js",
+            "types": "./dist/name/getComponentNames.d.ts"
+        },
+        "./name/getNames": {
+            "require": "./dist/name/getNames.cjs",
+            "import": "./dist/name/getNames.js",
+            "types": "./dist/name/getNames.d.ts"
+        },
+        "./name/humpToLine": {
+            "require": "./dist/name/humpToLine.cjs",
+            "import": "./dist/name/humpToLine.js",
+            "types": "./dist/name/humpToLine.d.ts"
+        },
+        "./name/lineToLargeHump": {
+            "require": "./dist/name/lineToLargeHump.cjs",
+            "import": "./dist/name/lineToLargeHump.js",
+            "types": "./dist/name/lineToLargeHump.d.ts"
+        },
+        "./name": {
+            "require": "./dist/name/index.cjs",
+            "import": "./dist/name/index.js",
+            "types": "./dist/name/index.d.ts"
+        },
+        "./name/lineToSmallHump": {
+            "require": "./dist/name/lineToSmallHump.cjs",
+            "import": "./dist/name/lineToSmallHump.js",
+            "types": "./dist/name/lineToSmallHump.d.ts"
         }
     },
     "main": "./dist/index.cjs",

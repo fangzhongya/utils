@@ -1,28 +1,17 @@
+// 小驼峰命名法 第一个单词首字母小写，剩下单词的首字母大写，如：firstName
+// 大驼峰式命名规则：只要遇到单词，就首字母大写，使用构造函数来创建对象时，必须要用大驼峰式命名法来命名，如：FirstName
+// -命名法：在每两个单词之间用-链接，这就是-命名法，如：first-name
+// Small
 
-/**
- * 首字母大写
- * @param {string} vs
- * @returns string
- */
-export function firstUpper(vs: string): string {
-    return vs.slice(0, 1).toUpperCase() + vs.slice(1);
-}
-/**
- * 首字母小写
- * @param {string} vs
- * @returns string
- */
-export function firstLower(vs: string): string {
-    return vs.slice(0, 1).toLowerCase() + vs.slice(1);
-}
+// large
 
-
+// hump
 /**
- * 获取-方式组件名称 el-input
+ * 驼峰命名转 - 方式
  * @param {*} name
  * @returns
  */
-export function getNmaeBar(name: string): string {
+export function humpToLine(name: string): string {
     const reg = /(([A-Z])([^A-Z]*))/g;
     let result;
     const arr: Array<string> = [];
