@@ -1,10 +1,10 @@
 import { getStartSames } from '../basic/string/getStartSames';
 
 /**
- *
- * @param url 当前文件完整地址
- * @param imp 要引入的完整地址
- * @returns string 获取相对的引入地址
+ * 获取相对当前文件的引入地址
+ * @param {string} url 当前文件完整地址
+ * @param {string} imp 要引入的完整地址
+ * @returns {string} 相对引入地址
  */
 export function getImportUrl(
     url: string,

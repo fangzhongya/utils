@@ -6,10 +6,11 @@
 // large
 
 // hump
+
 /**
  * 驼峰命名转 - 方式
- * @param {*} name
- * @returns
+ * @param { string } name 要转换的字符串
+ * @returns { string } 转换后字符串
  */
 export function humpToLine(name: string): string {
     const reg = /(([A-Z])([^A-Z]*))/g;

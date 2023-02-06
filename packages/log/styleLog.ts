@@ -1,4 +1,5 @@
 /**
+ * 颜色
  * 0 黑色	'black'
  * 1 红色	'red'
  * 2 绿色	'green'
@@ -40,9 +41,29 @@ interface StyleLogObj {
      * \x1b[4m
      */
     revert?: boolean;
-    // overline
 }
 
+/**
+ * 日志输出样式
+ * 颜色值 背景色 0 是白色 7是黑色 其他一样：
+ * 0 黑色	'black'
+ * 1 红色	'red'
+ * 2 绿色	'green'
+ * 3 黄色	'yellow'
+ * 4 蓝色	'blue'
+ * 5 洋红色	'magenta'
+ * 6 青色	'cyan'
+ * 7 白色	'white'
+ * @param {string} msg 要输出的日志字符串
+ * @param {StyleLogObj} obj 日志样式对象
+ * @param {string | number} obj.bag 背景颜色
+ * @param {string | number} obj.text 文字颜色
+ * @param {boolean } obj.bold 是否是粗体
+ * @param {boolean} obj.italic 是否是斜体
+ * @param {boolean} obj.lineThrough 中线
+ * @param {boolean} obj.revert 下线
+ * @returns {string} 带样式的日志
+ */
 export function styleLog(msg = '', obj?: StyleLogObj) {
     const arr = ['\x1b[0m'];
     if (obj?.revert) {

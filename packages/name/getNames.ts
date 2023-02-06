@@ -4,8 +4,8 @@ import { lineToSmallHump } from './lineToSmallHump';
 
 /**
  * 获取三种方式名称 el-input ElInput elInput
- * @param {*} name
- * @returns
+ * @param { string } name 要转换的字符串
+ * @returns { Array<string> } 转换后的数组 [-, 大驼峰, 小驼峰]
  */
 export function getNames(name: string): Array<string> {
     const line = humpToLine(name);

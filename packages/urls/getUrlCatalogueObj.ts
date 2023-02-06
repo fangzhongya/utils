@@ -4,9 +4,12 @@ interface UrlCatalogue {
     suffix: string;
 }
 /**
- * 去掉文件，获取文件目录
- * @param str
- * @returns
+ * 去掉文件，获取文件目录对象
+ * @param str { 文件地址 }
+ * @returns { UrlCatalogue } 目录对象
+ * @returns { string } catalogue 当前目录值
+ * @returns { string } name 文件名称
+ * @returns { string } suffix 文件后缀
  */
 export function getUrlCatalogueObj(
     str: string,

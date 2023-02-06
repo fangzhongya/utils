@@ -53,11 +53,11 @@
 
 /**
  * 合并两个对象的值
- * @param a 合并到的对象
- * @param b 合并对象
- * @param j 合并级别
- * @param i 是否合并数组
- * @returns 合并的对象
+ * @param {T} a 合并到的对象
+ * @param {T} b 合并对象
+ * @param {number} j 合并级别
+ * @param {boolean} i 是否合并数组
+ * @returns {T} 合并的对象
  */
 export function mergeObject<T>(
     a: T,

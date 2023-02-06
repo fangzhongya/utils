@@ -1,8 +1,7 @@
-
-
 /**
  * 是否是数组
- * @param {*} objs
+ * @param {any} obj 判断值
+ * @returns {boolean}
  */
 export function isArray(obj: any): boolean {
     return (

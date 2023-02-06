@@ -3,8 +3,9 @@ import { appearNum } from '../basic/string/appearNum';
 import { appearNumSeat } from '../basic/string/appearNumSeat';
 /**
  * 以当前路径 生成对应的url地址
- * @param url
- * @param add
+ * @param {string} url 要生成的完整地址
+ * @param {string} add 生成的目录地址
+ * @returns {string} 完整的url地址
  */
 export function getReplaceUrl(
     url: string,

@@ -3,36 +3,29 @@ interface Objunkn {
 }
 
 /**
- * 数组值，如果存在就删除，如果没有就添加
- * @param {*} objs
- * @param {*} id
+ * 判断数组值，如果存在就删除，如果没有就添加
+ * @param {Array<Objunkn>} arr 当前数组
+ * @param {Objunkn} obj 要处理的对象
+ * @param {string} id 比对的对应属性名称
+ * @returns {Array<Objunkn>} 判断后的数组值
  */
 export function toggleArray(
-    objs: Array<Objunkn>,
-    arr: Objunkn,
+    arr: Array<Objunkn>,
+    obj: Objunkn,
     id: string,
 ): Array<Objunkn> {
     let varr = [];
     let is = true;
-    for (let index = 0; index < objs.length; index++) {
-        const element = objs[index];
-        if (element[id] === arr[id]) {
+    for (let index = 0; index < arr.length; index++) {
+        const element = arr[index];
+        if (element[id] === obj[id]) {
             is = false;
         } else {
             varr.push(element);
         }
     }
     if (is) {
-        varr.push(arr);
+        varr.push(obj);
     }
     return varr;
-}
-
-/**
- * 首字母小写
- * @param {string} vs
- * @returns string
- */
-export function firstLower(vs: string): string {
-    return vs.slice(0, 1).toLowerCase() + vs.slice(1);
 }

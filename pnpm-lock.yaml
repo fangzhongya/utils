@@ -1,14 +1,14 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fangzhongya/create': 0.2.0-5
+  '@fangzhongya/create': 0.2.0-6
   '@types/node': ^18.11.19
   tsup: ^6.5.0
   typescript: ^4.9.5
   vitest: ^0.28.4
 
 devDependencies:
-  '@fangzhongya/create': 0.2.0-5
+  '@fangzhongya/create': 0.2.0-6
   '@types/node': 18.11.19
   tsup: 6.5.0_typescript@4.9.5
   typescript: 4.9.5
@@ -232,8 +232,8 @@ packages:
     dev: true
     optional: true
 
-  /@fangzhongya/create/0.2.0-5:
-    resolution: {integrity: sha512-xtSgzpYSgNf8yeGXV65OQjW4DgvDp67n2ghkzWu5pml88e2HG3lAagXzii88rRi5CRW+nq3dRd+0KeFP2YrAjg==}
+  /@fangzhongya/create/0.2.0-6:
+    resolution: {integrity: sha512-i/SRYJFcoRW0S3IEZ2Cpkw/yslOA0tsIGiI93/Z6Tpq4ukKeGTb3V43ZjGdHLyXUEjTo/nnhlHwUtebIJ5WJkg==}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
