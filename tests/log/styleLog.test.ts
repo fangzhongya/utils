@@ -1,7 +1,7 @@
-import { styleLog } from '../packages/log/styleLog';
+import { styleLog } from '../../packages/log/styleLog';
 import { test, expect } from 'vitest';
 
-test('log', () => {
+test('styleLog', () => {
     console.log(
         styleLog(' 你好 ', {
             lineThrough: true,

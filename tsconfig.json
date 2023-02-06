@@ -27,6 +27,7 @@
   },
   "include": [
     "node.index.ts",
+    "node.tests.ts",
     "packages/**/*.ts",
   ],
   "ts-node": {
