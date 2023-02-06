@@ -1,5 +1,5 @@
-export * from './getImportUrlSuffix';
 export * from './getImportUrl';
-export * from './getUrlCatalogue';
+export * from './getImportUrlSuffix';
 export * from './getReplaceUrl';
+export * from './getUrlCatalogue';
 export * from './getUrlCatalogueObj';
