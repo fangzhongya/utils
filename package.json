@@ -2,7 +2,7 @@
     "name": "@fangzhongya/utils",
     "private": false,
     "type": "module",
-    "version": "0.0.6-8",
+    "version": "0.0.6-9",
     "description ": "个人工具库",
     "author": "fangzhongya ",
     "license": "MIT",
@@ -24,7 +24,7 @@
         "test": "vitest test"
     },
     "devDependencies": {
-        "@fangzhongya/create": "0.2.0-3",
+        "@fangzhongya/create": "0.2.0-5",
         "@types/node": "^18.11.19",
         "tsup": "^6.5.0",
         "typescript": "^4.9.5",
@@ -48,15 +48,15 @@
             "import": "./dist/basic/array/index.js",
             "types": "./dist/basic/array/index.d.ts"
         },
-        "./basic/array/toggleArray": {
-            "require": "./dist/basic/array/toggleArray.cjs",
-            "import": "./dist/basic/array/toggleArray.js",
-            "types": "./dist/basic/array/toggleArray.d.ts"
-        },
         "./basic/array/isArray": {
             "require": "./dist/basic/array/isArray.cjs",
             "import": "./dist/basic/array/isArray.js",
             "types": "./dist/basic/array/isArray.d.ts"
+        },
+        "./basic/array/toggleArray": {
+            "require": "./dist/basic/array/toggleArray.cjs",
+            "import": "./dist/basic/array/toggleArray.js",
+            "types": "./dist/basic/array/toggleArray.d.ts"
         },
         "./basic/object/index": {
             "require": "./dist/basic/object/index.cjs",
@@ -93,6 +93,11 @@
             "import": "./dist/basic/string/firstLower.js",
             "types": "./dist/basic/string/firstLower.d.ts"
         },
+        "./basic/string/getStartSame": {
+            "require": "./dist/basic/string/getStartSame.cjs",
+            "import": "./dist/basic/string/getStartSame.js",
+            "types": "./dist/basic/string/getStartSame.d.ts"
+        },
         "./basic/string/firstUpper": {
             "require": "./dist/basic/string/firstUpper.cjs",
             "import": "./dist/basic/string/firstUpper.js",
@@ -108,30 +113,50 @@
             "import": "./dist/basic/string/index.js",
             "types": "./dist/basic/string/index.d.ts"
         },
-        "./basic/string/getStartSame": {
-            "require": "./dist/basic/string/getStartSame.cjs",
-            "import": "./dist/basic/string/getStartSame.js",
-            "types": "./dist/basic/string/getStartSame.d.ts"
-        },
         "./basic/index": {
             "require": "./dist/basic/index.cjs",
             "import": "./dist/basic/index.js",
             "types": "./dist/basic/index.d.ts"
         },
-        "./log/index": {
-            "require": "./dist/log/index.cjs",
-            "import": "./dist/log/index.js",
-            "types": "./dist/log/index.d.ts"
+        "./iss/index": {
+            "require": "./dist/iss/index.cjs",
+            "import": "./dist/iss/index.js",
+            "types": "./dist/iss/index.d.ts"
         },
         "./log/styleLog": {
             "require": "./dist/log/styleLog.cjs",
             "import": "./dist/log/styleLog.js",
             "types": "./dist/log/styleLog.d.ts"
         },
-        "./iss/index": {
-            "require": "./dist/iss/index.cjs",
-            "import": "./dist/iss/index.js",
-            "types": "./dist/iss/index.d.ts"
+        "./log/index": {
+            "require": "./dist/log/index.cjs",
+            "import": "./dist/log/index.js",
+            "types": "./dist/log/index.d.ts"
+        },
+        "./judge/index": {
+            "require": "./dist/judge/index.cjs",
+            "import": "./dist/judge/index.js",
+            "types": "./dist/judge/index.d.ts"
+        },
+        "./judge/matchs": {
+            "require": "./dist/judge/matchs.cjs",
+            "import": "./dist/judge/matchs.js",
+            "types": "./dist/judge/matchs.d.ts"
+        },
+        "./judge/matchsEnd": {
+            "require": "./dist/judge/matchsEnd.cjs",
+            "import": "./dist/judge/matchsEnd.js",
+            "types": "./dist/judge/matchsEnd.d.ts"
+        },
+        "./judge/matchsStart": {
+            "require": "./dist/judge/matchsStart.cjs",
+            "import": "./dist/judge/matchsStart.js",
+            "types": "./dist/judge/matchsStart.d.ts"
+        },
+        "./judge/matchsWhole": {
+            "require": "./dist/judge/matchsWhole.cjs",
+            "import": "./dist/judge/matchsWhole.js",
+            "types": "./dist/judge/matchsWhole.d.ts"
         },
         "./name/getComponentNames": {
             "require": "./dist/name/getComponentNames.cjs",
@@ -163,50 +188,25 @@
             "import": "./dist/name/lineToSmallHump.js",
             "types": "./dist/name/lineToSmallHump.d.ts"
         },
-        "./judge/index": {
-            "require": "./dist/judge/index.cjs",
-            "import": "./dist/judge/index.js",
-            "types": "./dist/judge/index.d.ts"
-        },
-        "./judge/matchs": {
-            "require": "./dist/judge/matchs.cjs",
-            "import": "./dist/judge/matchs.js",
-            "types": "./dist/judge/matchs.d.ts"
-        },
-        "./judge/matchsEnd": {
-            "require": "./dist/judge/matchsEnd.cjs",
-            "import": "./dist/judge/matchsEnd.js",
-            "types": "./dist/judge/matchsEnd.d.ts"
-        },
-        "./judge/matchsWhole": {
-            "require": "./dist/judge/matchsWhole.cjs",
-            "import": "./dist/judge/matchsWhole.js",
-            "types": "./dist/judge/matchsWhole.d.ts"
-        },
-        "./judge/matchsStart": {
-            "require": "./dist/judge/matchsStart.cjs",
-            "import": "./dist/judge/matchsStart.js",
-            "types": "./dist/judge/matchsStart.d.ts"
+        "./urls/getImportUrlSuffix": {
+            "require": "./dist/urls/getImportUrlSuffix.cjs",
+            "import": "./dist/urls/getImportUrlSuffix.js",
+            "types": "./dist/urls/getImportUrlSuffix.d.ts"
         },
         "./urls/getImportUrl": {
             "require": "./dist/urls/getImportUrl.cjs",
             "import": "./dist/urls/getImportUrl.js",
             "types": "./dist/urls/getImportUrl.d.ts"
         },
-        "./urls/getReplaceUrl": {
-            "require": "./dist/urls/getReplaceUrl.cjs",
-            "import": "./dist/urls/getReplaceUrl.js",
-            "types": "./dist/urls/getReplaceUrl.d.ts"
-        },
-        "./urls/getImportUrlSuffix": {
-            "require": "./dist/urls/getImportUrlSuffix.cjs",
-            "import": "./dist/urls/getImportUrlSuffix.js",
-            "types": "./dist/urls/getImportUrlSuffix.d.ts"
-        },
         "./urls/getUrlCatalogue": {
             "require": "./dist/urls/getUrlCatalogue.cjs",
             "import": "./dist/urls/getUrlCatalogue.js",
             "types": "./dist/urls/getUrlCatalogue.d.ts"
+        },
+        "./urls/getReplaceUrl": {
+            "require": "./dist/urls/getReplaceUrl.cjs",
+            "import": "./dist/urls/getReplaceUrl.js",
+            "types": "./dist/urls/getReplaceUrl.d.ts"
         },
         "./urls/getUrlCatalogueObj": {
             "require": "./dist/urls/getUrlCatalogueObj.cjs",
@@ -222,11 +222,6 @@
             "require": "./dist/index.cjs",
             "import": "./dist/index.js",
             "types": "./dist/index.d.ts"
-        },
-        ".": {
-            "require": "./dist/.cjs",
-            "import": "./dist/.js",
-            "types": "./dist/.d.ts"
         }
     },
     "main": "./dist/index.cjs",
