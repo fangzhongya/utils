@@ -1,4 +1,4 @@
-import { firstLower } from '../basic/string/firstLower';
+import { firstUpper } from '../basic/string/firstUpper';
 
 /**
  * - 方式 转 大驼峰命名
@@ -8,7 +8,7 @@ import { firstLower } from '../basic/string/firstLower';
 export function lineToLargeHump(name: string) {
     let arr = name.split('-');
     arr = arr.map((vs) => {
-        return firstLower(vs);
+        return firstUpper(vs);
     });
     return arr.join('');
 }
