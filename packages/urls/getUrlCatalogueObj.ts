@@ -1,8 +1,9 @@
-interface UrlCatalogue {
+export type UrlCatalogue = {
     catalogue: string;
     name: string;
     suffix: string;
-}
+};
+
 /**
  * 去掉文件，获取文件目录对象
  * @param str { 文件地址 }
