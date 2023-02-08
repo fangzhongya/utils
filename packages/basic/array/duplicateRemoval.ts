@@ -1,5 +1,5 @@
-interface Objunkn {
-    [key: string]: any;
+interface ObjUnkn {
+    [key: string]: unknown;
 }
 /**
  * 数组对象去重
@@ -11,10 +11,10 @@ export function duplicateRemoval<T>(
     arr: Array<T>,
     key: string,
 ): Array<T> {
-    const ks: Array<string> = [];
+    const ks: Array<unknown> = [];
     const arrs: Array<T> = [];
     for (let index = 0; index < arr.length; index++) {
-        const element = arr[index] as Objunkn;
+        const element = arr[index] as ObjUnkn;
         const v = element[key];
         if (!ks.includes(v)) {
             ks.push(v);
