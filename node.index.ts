@@ -1,9 +1,12 @@
-import { runDev } from '@fangzhongya/create/utils/package';
+import { runDev } from '@fangzhongya/create/export/package';
 runDev({
     cover: true,
-    files: ['*.d.ts'],
-    exports: {
-        './*': './*',
+    fileCover: true,
+    packageObj: {
+        files: ['*.d.ts'],
+        exports: {
+            './*': './*',
+        },
     },
     fileDirs(_url, _files, name) {
         return [

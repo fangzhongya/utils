@@ -4,8 +4,8 @@ import { test, expect } from 'vitest';
 test('getImportUrlSuffix', () => {
     console.log(
         getImportUrlSuffix(
-            'D:\\fangzhongya\\utils\\packages\\basic\\array\\index.ts',
-            'D:\\fangzhongya\\utils\\packages\\basic\\array\\dafdsa\\index.ts',
+            'D:\\fangzhongya\\create\\packages\\out\\css.ts',
+            'D:\\fangzhongya\\create\\packages\\out\\css.test.ts',
         ),
     );
 });
