@@ -28,6 +28,7 @@
   "include": [
     "node.index.ts",
     "node.tests.ts",
+    "vitest.config.ts",
     "packages/**/*.ts",
   ],
   "ts-node": {

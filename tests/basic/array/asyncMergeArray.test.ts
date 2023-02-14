@@ -6,5 +6,5 @@ import { test, expect } from 'vitest';
 import { asyncMergeArray } from '../../../packages/basic/array/asyncMergeArray';
 
 test('../../../packages/basic/array/asyncMergeArray', () => {
-       //expect(asyncMergeArray()).toBe();
+    expect(asyncMergeArray()).toBe();
 });
