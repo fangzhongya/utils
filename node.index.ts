@@ -2,10 +2,15 @@ import { runDev } from '@fangzhongya/create/export/package';
 runDev({
     cover: true,
     fileCover: true,
+    upversion: true,
     packageObj: {
-        files: ['*.d.ts'],
         exports: {
             './*': './*',
+        },
+        typesVersions: {
+            '*': {
+                '*': ['./dist/*'],
+            },
         },
     },
     fileDirs(_url, _files, name) {
